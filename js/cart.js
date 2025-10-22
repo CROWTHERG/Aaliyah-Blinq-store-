@@ -56,20 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let message = "🛍 *Aaliyah Blinq Order*%0A%0A";
 
     cart.forEach(item => {
+      // Full image URL for WhatsApp link preview
       const imageURL = `${window.location.origin}/${item.image}`;
       message += `✨ *${item.name}*%0A₦${item.price.toLocaleString()} × ${item.quantity}%0A📸 ${imageURL}%0A%0A`;
     });
 
-    const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
-    message += `🧾 *Total:* ₦${total.toLocaleString()}%0A%0APlease confirm my order ❤️`;
+    message += `🧾 *Total:* ₦${cart
+      .reduce((sum, i) => sum + i.price * i.quantity, 0)
+      .toLocaleString()}%0A%0APlease confirm my order ❤️`;
 
     const whatsappURL = `https://wa.me/${phone}?text=${message}`;
-
-    // ✅ Open WhatsApp and clear cart after sending
     window.open(whatsappURL, "_blank");
-    localStorage.removeItem("cart");
-    cart = [];
-    renderCart();
   });
 
   renderCart();
