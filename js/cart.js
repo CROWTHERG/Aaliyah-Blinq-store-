@@ -1,66 +1,84 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cartItemsDiv = document.getElementById("cart-items");
-  const totalPriceEl = document.getElementById("total-price");
-  const checkoutBtn = document.getElementById("checkout-btn");
+  const cartItemsContainer = document.getElementById("cart-items");
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  const totalDisplay = document.getElementById("cart-total");
 
+  // ✅ Load cart from localStorage (same key used in shop.js)
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+  // 🧩 Render the cart
   function renderCart() {
-    cartItemsDiv.innerHTML = "";
-    let total = 0;
+    cartItemsContainer.innerHTML = "";
 
-    if (cart.length === 0) {
-      cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
-      totalPriceEl.textContent = "Total: ₦0";
+    if (!cart || cart.length === 0) {
+      cartItemsContainer.innerHTML = "<p>Your cart is empty 🛍</p>";
+      totalDisplay.textContent = "₦0";
       return;
     }
 
+    let total = 0;
+
     cart.forEach(item => {
+      total += item.price * item.quantity;
+
       const div = document.createElement("div");
       div.classList.add("cart-item");
       div.innerHTML = `
-        <img src="${item.image}" alt="${item.name}">
-        <div>
+        <img src="${item.image}" alt="${item.name}" class="cart-img">
+        <div class="cart-details">
           <h4>${item.name}</h4>
           <p>₦${item.price.toLocaleString()} × ${item.quantity}</p>
         </div>
-        <button class="remove">🗑</button>
+        <button class="remove" data-id="${item.id}">🗑 Remove</button>
       `;
-      div.querySelector(".remove").addEventListener("click", () => removeItem(item.id));
-      cartItemsDiv.appendChild(div);
-      total += item.price * item.quantity;
+      cartItemsContainer.appendChild(div);
     });
 
-    totalPriceEl.textContent = `Total: ₦${total.toLocaleString()}`;
+    totalDisplay.textContent = `₦${total.toLocaleString()}`;
+
+    document.querySelectorAll(".remove").forEach(btn =>
+      btn.addEventListener("click", e => removeFromCart(e.target.dataset.id))
+    );
   }
 
-  function removeItem(id) {
-    cart = cart.filter(item => item.id !== id);
+  // 🧹 Remove single item
+  function removeFromCart(id) {
+    cart = cart.filter(item => item.id != id);
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
-    updateCartCount();
   }
 
-  function updateCartCount() {
-    document.getElementById("cart-count").textContent =
-      cart.reduce((sum, item) => sum + item.quantity, 0);
-  }
-
+  // 💬 Checkout to WhatsApp + clear cart
   checkoutBtn.addEventListener("click", () => {
     if (cart.length === 0) {
       alert("Your cart is empty!");
       return;
     }
-    let message = "Hello Aaliyah Blinq 👋%0AI’d like to order:%0A";
-    let total = 0;
+
+    const phone = "2349043495526"; // Aaliyah Blinq WhatsApp number
+    let message = "🛍 *Aaliyah Blinq Order*%0A%0A";
+
     cart.forEach(item => {
-      message += `- ${item.name} × ${item.quantity} — ₦${item.price.toLocaleString()}%0A`;
-      total += item.price * item.quantity;
+      const imageURL = `${window.location.origin}/${item.image}`;
+      message += `✨ *${item.name}*%0A₦${item.price.toLocaleString()} × ${item.quantity}%0A📸 ${imageURL}%0A%0A`;
     });
-    message += `%0ATotal: ₦${total.toLocaleString()}`;
-    window.open(`https://wa.me/2349043495526?text=${message}`, "_blank");
+
+    const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
+    message += `🧾 *Total:* ₦${total.toLocaleString()}%0A%0APlease confirm my order ❤️`;
+
+    const whatsappURL = `https://wa.me/${phone}?text=${message}`;
+
+    // ✅ Open WhatsApp, clear cart, update UI
+    window.open(whatsappURL, "_blank");
+    localStorage.removeItem("cart");
+    cart = [];
+    renderCart();
+
+    // Small success message
+    setTimeout(() => {
+      alert("Order sent ✅ Your cart has been cleared!");
+    }, 800);
   });
 
   renderCart();
-  updateCartCount();
 });
