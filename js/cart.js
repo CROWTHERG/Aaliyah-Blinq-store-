@@ -1,83 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cartItemsContainer = document.getElementById("cart-items");
-  const checkoutBtn = document.getElementById("checkoutBtn");
-  const totalDisplay = document.getElementById("cart-total");
+  const cartItemsDiv = document.getElementById("cart-items");
+  const totalPriceEl = document.getElementById("total-price");
+  const checkoutBtn = document.getElementById("checkout-btn");
+  const cartCountEl = document.getElementById("cart-count");
 
-  // ✅ Load cart from localStorage (same key used in shop.js)
+  // ✅ Ensure correct cart key and format
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // 🧩 Render the cart
   function renderCart() {
-    cartItemsContainer.innerHTML = "";
+    cartItemsDiv.innerHTML = "";
+    let total = 0;
 
-    if (!cart || cart.length === 0) {
-      cartItemsContainer.innerHTML = "<p>Your cart is empty 🛍</p>";
-      totalDisplay.textContent = "₦0";
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+      totalPriceEl.textContent = "Total: ₦0";
+      updateCartCount();
       return;
     }
 
-    let total = 0;
-
     cart.forEach(item => {
-      total += item.price * item.quantity;
-
       const div = document.createElement("div");
       div.classList.add("cart-item");
       div.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" class="cart-img">
-        <div class="cart-details">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="item-details">
           <h4>${item.name}</h4>
           <p>₦${item.price.toLocaleString()} × ${item.quantity}</p>
         </div>
-        <button class="remove" data-id="${item.id}">🗑 Remove</button>
+        <button class="remove">🗑</button>
       `;
-      cartItemsContainer.appendChild(div);
+      div.querySelector(".remove").addEventListener("click", () => removeItem(item.id));
+      cartItemsDiv.appendChild(div);
+      total += item.price * item.quantity;
     });
 
-    totalDisplay.textContent = `₦${total.toLocaleString()}`;
-
-    document.querySelectorAll(".remove").forEach(btn =>
-      btn.addEventListener("click", e => removeFromCart(e.target.dataset.id))
-    );
+    totalPriceEl.textContent = `Total: ₦${total.toLocaleString()}`;
+    updateCartCount();
   }
 
-  // 🧹 Remove single item
-  function removeFromCart(id) {
-    cart = cart.filter(item => item.id != id);
+  function removeItem(id) {
+    cart = cart.filter(item => item.id !== id);
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
   }
 
-  // 💬 Checkout to WhatsApp + clear cart
+  function updateCartCount() {
+    if (cartCountEl) {
+      cartCountEl.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    }
+  }
+
   checkoutBtn.addEventListener("click", () => {
     if (cart.length === 0) {
       alert("Your cart is empty!");
       return;
     }
 
-    const phone = "2349043495526"; // Aaliyah Blinq WhatsApp number
-    let message = "🛍 *Aaliyah Blinq Order*%0A%0A";
+    let message = "Hello Aaliyah Blinq 👋%0AI’d like to order:%0A%0A";
+    let total = 0;
 
     cart.forEach(item => {
-      const imageURL = `${window.location.origin}/${item.image}`;
-      message += `✨ *${item.name}*%0A₦${item.price.toLocaleString()} × ${item.quantity}%0A📸 ${imageURL}%0A%0A`;
+      message += `🛍️ *${item.name}* × ${item.quantity} — ₦${item.price.toLocaleString()}%0A`;
+      if (item.image) {
+        message += `📸 Image: ${encodeURIComponent(window.location.origin + "/" + item.image)}%0A`;
+      }
+      message += "%0A";
+      total += item.price * item.quantity;
     });
 
-    const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
-    message += `🧾 *Total:* ₦${total.toLocaleString()}%0A%0APlease confirm my order ❤️`;
+    message += `%0A*Total:* ₦${total.toLocaleString()}%0A%0AThank you 💕`;
 
-    const whatsappURL = `https://wa.me/${phone}?text=${message}`;
-
-    // ✅ Open WhatsApp, clear cart, update UI
-    window.open(whatsappURL, "_blank");
+    // ✅ Clear cart before opening WhatsApp
     localStorage.removeItem("cart");
     cart = [];
     renderCart();
 
-    // Small success message
-    setTimeout(() => {
-      alert("Order sent ✅ Your cart has been cleared!");
-    }, 800);
+    window.open(`https://wa.me/2349043495526?text=${message}`, "_blank");
   });
 
   renderCart();
