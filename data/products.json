@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Simple ladies necklace",
+    "price": 4500,
+    "image": "assets/images/necklaces/product21.jpg",
+    "category": "necklace"
+  },
+  {
+    "id": 2,
+    "name": "Simple ladies necklace",
+    "price": 3500,
+    "image": "assets/images/necklaces/product18.jpg",
+    "category": "necklace"
+  },
+  {
+    "id": 3,
+    "name": "Simple love chain",
+    "price": 4000,
+    "image": "assets/images/necklaces/product25.jpg",
+    "category": "necklace"
+  },
+  {
+    "id": 4,
+    "name": "Bow ball necklace",
+    "price": 4500,
+    "image": "assets/images/necklaces/product24.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 5,
+    "name": "Simple ball necklace with earring",
+    "price": 5000,
+    "image": "assets/images/necklaces/product22.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 6,
+    "name": "Rings",
+    "price": 2000,
+    "image": "assets/images/Rings/product26.jpg",
+    "category": "ring"
+  },
+    {
+    "id": 7,
+    "name": "Men Necklace",
+    "price": 5000,
+    "image": "assets/images/necklaces/product27.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 8,
+    "name": "Vca bracelet",
+    "price": 4500,
+    "image": "assets/images/bracelets/product20.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 9,
+    "name": "Small van clef",
+    "price": 4000,
+    "image": "assets/images/bracelets/product28.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 10,
+    "name": "Cherry necklace",
+    "price": 5000,
+    "image": "assets/images/necklaces/product1.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 11,
+    "name": "Vca set",
+    "price": 6000,
+    "image": "assets/images/necklaces/product13.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 12,
+    "name": "Clip on studs",
+    "price": 5000,
+    "image": "assets/images/earrings/product16.jpg",
+    "category": "earring"
+  },
+    {
+    "id": 13,
+    "name": "Leg chain",
+    "price": 5000,
+    "image": "assets/images/necklaces/product19.jpg",
+    "category": "necklace"
+  },
+      {
+    "id": 14,
+    "name": "Bow necklace",
+    "price": 7000,
+    "image": "assets/images/necklaces/product28.jpg",
+    "category": "necklace"
+  },
+      {
+    "id": 15,
+    "name": "neck chain",
+    "price": 5000,
+    "image": "assets/images/necklaces/product12.jpg",
+    "category": "necklace"
+  },
+      {
+    "id": 16,
+    "name": "Acne pimple patch",
+    "price": 3500,
+    "image": "assets/images/rings/product24.jpg",
+    "category": "Face care"
+  },
+      {
+    "id": 17,
+    "name": "Eye Mask",
+    "price": 1000,
+    "image": "assets/images/rings/product30.jpg",
+    "category": "ring"
+  },
+      {
+    "id": 19,
+    "name": "Wallpaper collage (10pieces )",
+    "price": 2500,
+    "image": "assets/images/bracelets/product14.jpg",
+    "category": "wallpaper"
+  },
+        {
+    "id": 20,
+    "name": "Simple love necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product10.jpg",
+    "category": "necklace"
+  },
+        {
+    "id": 21,
+    "name": "Hello kitty",
+    "price": 5000,
+    "image": "assets/images/necklaces/product17.jpg",
+    "category": "necklace"
+  }
+]

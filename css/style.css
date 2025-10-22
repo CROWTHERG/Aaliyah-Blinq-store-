@@ -1,0 +1,286 @@
+/* Global gold–black luxury theme */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f6f0e8, #e9dcc4);
+  color: #111;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.8);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.navbar h1 {
+  color: #d4af37;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.navbar nav a {
+  color: #fff;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #d4af37;
+}
+
+.icon {
+  width: 20px;
+  filter: invert(100%);
+}
+
+#cart-count {
+  background: #d4af37;
+  color: #000;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  position: relative;
+  top: -8px;
+  left: -6px;
+}
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: linear-gradient(135deg, #1a1a1a, #3b3b3b);
+  background-image: url('assets/images/bg-jewelry.jpg'); /* optional background image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  animation: fadeIn 2s ease;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(90deg, #d4af37, #f9e79f, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  animation: shimmer 5s infinite linear;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #f9e79f;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid #d4af37;
+  color: #f9e79f;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background: #d4af37;
+  color: #111;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Footer */
+footer {
+  background: #000;
+  color: #d4af37;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.navbar h1 {
+  color: #d4af37;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* Navigation links */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #d4af37;
+}
+
+/* Cart Icon */
+.icon {
+  width: 20px;
+  filter: invert(100%);
+}
+
+#cart-count {
+  background: #d4af37;
+  color: #000;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  position: relative;
+  top: -8px;
+  left: -6px;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #d4af37;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+/* Animation for open state */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile menu hidden by default */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  nav.open {
+    max-height: 300px;
+    padding: 1rem 0;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

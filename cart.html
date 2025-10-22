@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Aaliyah Blinq</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo/aaliyah-blinq-logo.png" type="image/x-icon"> 
+  <link rel="stylesheet" href="css/cart.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/cart.js"></script>
+</head>
+<body><header class="navbar">
+  <div class="logo">
+    <img src="assets/logo/aaliyah-blinq-logo.png" alt="Aaliyah Blinq Logo">
+    <h1>AALIYAH BLINQ</h1>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html" class="cart-link">
+      <img src="assets/icons/cart.svg" alt="Cart" class="icon">
+      <span id="cart-count">0</span>
+    </a>
+  </nav>
+</header>
+  
+
+  <section class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+      <p id="total-price">Total: ₦0</p>
+      <button id="checkout-btn">Checkout via WhatsApp</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>✨ Aaliyah Blinq — Where beauty blinqs, confidence glows ✨</p>
+  </footer>
+</body>
+</html>
