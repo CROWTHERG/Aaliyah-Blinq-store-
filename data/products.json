@@ -132,11 +132,235 @@
     "image": "assets/images/necklaces/product10.jpg",
     "category": "necklace"
   },
-  {
+    {
     "id": 21,
-    "name": "Hello kitty",
-    "price": 5000,
-    "image": "assets/images/necklaces/product17.jpg",
+    "name": "Studs",
+    "price": 4500,
+    "image": "assets/images/rings/product37.jpg",
+    "category": "Rings"
+  },
+    {
+    "id": 22,
+    "name": "Studs",
+    "price": 4500,
+    "image": "assets/images/earrings/product26.jpg",
+    "category": "earring"
+  },
+    {
+    "id": 23,
+    "name": "Studs",
+    "price": 4500,
+    "image": "assets/images/earrings/product40.jpg",
+    "category": "earring"
+  },
+    {
+    "id": 24,
+    "name": "Hip Hop Earring",
+    "price": 3000,
+    "image": "assets/images/earrings/product38.jpg",
+    "category": "earring"
+  },
+      {
+    "id": 25,
+    "name": "Bow Earring",
+    "price": 4000,
+    "image": "assets/images/earrings/product39.jpg",
     "category": "necklace"
+  },   
+    {
+    "id": 26,
+    "name": "Face Mask",
+    "price": 500,
+    "image": "assets/images/necklaces/product41.jpg",
+    "category": "facemask"
+  },
+    {
+    "id": 27,
+    "name": "Love Ball necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product46.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 28,
+    "name": "Cross Chain",
+    "price": 5000,
+    "image": "assets/images/necklaces/product47.jpg",
+    "category": "necklace"
+  },
+      {
+    "id": 29,
+    "name": "love necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product48.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 30,
+    "name": "Simple Ladies necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product49.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 31,
+    "name": "Necklace Pouch",
+    "price": 500,
+    "image": "assets/images/necklaces/product50.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 32,
+    "name": "Hello Kitty",
+    "price": 4500,
+    "image": "assets/images/necklaces/product51.jpg",
+    "category": "necklace"
+  },
+      {
+    "id": 33,
+    "name": "Wallpaper Collage",
+    "price": 200,
+    "image": "assets/images/necklaces/product52.jpg",
+    "category": "wallpaper"
+  },
+    {
+    "id": 34,
+    "name": "Lip Mask",
+    "price": 1000,
+    "image": "assets/images/necklaces/product53.jpg",
+    "category": "mask"
+  },
+    {
+    "id": 35,
+    "name": "Eye Mask",
+    "price": 1000,
+    "image": "assets/images/necklaces/product54.jpg",
+    "category": "mask"
+  },
+    {
+    "id": 36,
+    "name": "Wall Collage",
+    "price": 200,
+    "image": "assets/images/necklaces/product55.jpg",
+    "category": "decor"
+  },
+      {
+    "id": 37,
+    "name": "Red love necklace",
+    "price": 4500,
+    "image": "assets/images/necklaces/product56.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 38,
+    "name": "Simple Ladies necklace",
+    "price": 3500,
+    "image": "assets/images/necklaces/product57.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 39,
+    "name": "Infinity necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product58.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 40,
+    "name": "Infinity love Rose Chain",
+    "price": 5000,
+    "image": "assets/images/necklaces/product59.jpg",
+    "category": "necklace"
+  },
+      {
+    "id": 41,
+    "name": "Rose Necklace",
+    "price": 4500,
+    "image": "assets/images/necklaces/product60.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 42,
+    "name": "Tie necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product61.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 43,
+    "name": "Strawberry Ladies Necklace",
+    "price": 5000,
+    "image": "assets/images/necklaces/product62.jpg",
+    "category": "necklace"
+  },
+    {
+    "id": 44,
+    "name": "Simple Bow necklace",
+    "price": 4000,
+    "image": "assets/images/necklaces/product63.jpg",
+    "category": "necklace"
+  },
+  {
+    "id": 45,
+    "name": "Rings",
+    "price": "1500 - 3000",
+    "image": "assets/images/bracelets/product61.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 46,
+    "name": "Chunky bracelet",
+    "price": 7000,
+    "image": "assets/images/bracelets/product66.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 47,
+    "name": "Chunky bracelet with ring",
+    "price": 7500,
+    "image": "assets/images/bracelets/product67.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 48,
+    "name": "Cartier Bangles",
+    "price": 5000,
+    "image": "assets/images/bracelets/product68.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 49,
+    "name": "Tennis Bracelet Adjustable",
+    "price": 5000,
+    "image": "assets/images/bracelets/product69.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 50,
+    "name": "Combo Bracelet",
+    "price": 9000,
+    "image": "assets/images/bracelets/product70.jpg",
+    "category": "bracelet"
+    },
+        {
+    "id": 51,
+    "name": "Tennis Bracelet Adjustable",
+    "price": 5000,
+    "image": "assets/images/bracelets/product71.jpg",
+    "category": "bracelet"
+  },
+    {
+    "id": 52,
+    "name": "Combo Adjustable Wristwatch and Bracelet",
+    "price": 10000,
+    "image": "assets/images/bracelets/product72.jpg",
+    "category": "bracelet"
+    },
+       {
+    "id": 53,
+    "name": "VCA Necklace with Bracelet",
+    "price": 10000,
+    "image": "assets/images/bracelets/product73.jpg",
+    "category": "bracelet"
   }
 ]
